@@ -19,7 +19,7 @@ void mainScreen() {
 	cout << "|" << setw(3) << "" << "--> 2. QUIT GAME" << setw(24) << "" << "|" << endl;
 	cout << "|" << setw(21) << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "|" << endl << endl;
 
-	cout << "Wybierz opcje: ";
+	cout << "Choice: ";
 	cin >> opcja;
 	cout << endl;
 	assert( opcja < 3 && opcja > 0 );
@@ -68,14 +68,14 @@ int main( int argc, char *argv[] ) {
 								clrscr();
 								board.displayBoard();
 
-								cout << "PRZEGRALES !!!" << endl << endl;
+								cout << "YOU LOST !!!" << endl << endl;
 							}
 							else {
 
 								clrscr();
 								board.displayBoard();
 
-								cout << "WYGRALES !!!" << endl << endl;
+								cout << "YOU WON !!!" << endl << endl;
 							}
 							break;
 						}
@@ -100,14 +100,14 @@ int main( int argc, char *argv[] ) {
 								clrscr();
 								board.displayBoard();
 
-								cout << "PRZEGRALES !!!" << endl << endl;
+								cout << "YOU LOST !!!" << endl << endl;
 							}
 							else {
 
 								clrscr();
 								board.displayBoard();
 
-								cout << "WYGRALES !!!" << endl << endl;
+								cout << "YOU WON !!!" << endl << endl;
 							}
 							break;
 						}
@@ -126,7 +126,7 @@ int main( int argc, char *argv[] ) {
 			default: {
 				
 				clrscr();
-				cout << "Podano nieprawidlowa wartosc!" << endl << endl;
+				cout << "Input ERROR !!!" << endl << endl;
 				mainScreen();
 			}
 		}
