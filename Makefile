@@ -1,22 +1,22 @@
 # Makefile
-# Kompilator g++.
+# Compiler g++.
 CC = g++
-# Mozliwe dodatkowe zmienne
+# Possible new variables
 # LIBS = -ll -lm
 LIBS =
 DIR = `basename $(CURDIR)`
 CFLAGS = -Wall -std=c++11
-# Pliki obiektowe - powstaja z plikow *.cpp.
+# Object files - created from *.cpp files.
 OBJECTS1 = battleships.o
-# Pliki naglowkowe - sa wlaczane do plikow *.cpp.
+# Header files - attached to *.cpp files.
 HFILES = battleships.h
-# Koncowy plik wykonywalny.
+# Executable file.
 EXEC1 = battleships.x
 
-# Definicja domyslnej reguly wzorcowej.
-# $< oznacza nazwe pliku pierwszej zaleznosci reguly.
-# $@ oznacza nazwe pliku celu w regule.
-# Wszystkie pliki obiektowe zaleza od wszystkich plikow naglowkowych.
+# Default rule template:
+# $< - first dependence file name.
+# $@ - final file name.
+# Every object file is dependent on header file.
 %.o : %.cpp $(HFILES) Makefile
 	$(CC) $(CFLAGS) -c $< -o $@
 
@@ -24,12 +24,12 @@ game: $(OBJECTS1)
 	$(CC) $(CFLAGS) $(LIBS) $(OBJECTS1) -o $(EXEC1)
 	./$(EXEC1)
 
-# Okreslenie celow sztucznych.
+# Declaring PHONIES
 .PHONY : clean
 
 clean :
 	$(RM) $(TARGET) *.out *.o *.x core
 
-# Archiwizacja i kompresja
+# Archiving and compression
 tar: clean
 	(cd ../; tar -cvzf $(DIR).tar.gz  $(DIR) )
