@@ -44,3 +44,11 @@ If the seamine is **really close** to a ship and the ship gets destroyed, it als
 ### Victory condition
 
 The game ends if one of the players manages to ***destroy all of the enemy's ships***.
+
+### Makefile
+
+To run the game, write in console:
+- `make`
+- `make game`
+
+You can clean up some files by typing `make clean`
